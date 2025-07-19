@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+    <title>AI</title>
+    
+    
+    <style>
+    
+ 
+ nav {
+  background-color: black;
+  color: white;
+}
+
+.navbar .nav-link {
+  color: white !important;
+}
+
+
+
+    .chat-input-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #1e1e1e;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.4);
+    }
+
+    .chat-input-box {
+      display: flex;
+      align-items: center;
+      background-color: black;
+      border-radius: 20px;
+      padding: 10px 16px;
+      width: 100%;
+      max-width: 700px;
+      color: #ccc;
+    }
+
+    .chat-input-box input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: #fff;
+      font-size: 16px;
+    }
+
+   
+
+   
+    
+    
+    .submit-btn {
+  background-color: #565656;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  margin-left: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+    
+    
+    
+    </style>
+
+    <!-- Mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- MDB core CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-collapse-init
+          data-mdb-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+       
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Left links -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active fw-bolder" aria-current="page" th:href="@{/}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bolder" th:href="@{/ai}">Reset</a>
+            </li>
+            
+          </ul>
+        </div>
+
+       
+
+          <!-- Notifications dropdown -->
+          <div class="dropdown">
+            <a
+              class="text-reset me-3 dropdown-toggle hidden-arrow"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-mdb-dropdown-init
+              aria-expanded="false"
+            >
+              <i class="fas fa-bell"></i>
+              <span class="badge rounded-pill badge-notification bg-danger">1</span>
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li><a class="dropdown-item" href="#">Some news</a></li>
+              <li><a class="dropdown-item" href="#">Another news</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+
+          <!-- Avatar dropdown -->
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle d-flex align-items-center hidden-arrow"
+              href="#"
+              id="navbarDropdownMenuAvatar"
+              role="button"
+              data-mdb-dropdown-init
+              aria-expanded="false"
+            >
+              <img
+                src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                class="rounded-circle"
+                height="25"
+                alt="User Avatar"
+                loading="lazy"
+              />
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdownMenuAvatar"
+            >
+              <li><a class="dropdown-item" href="#">My profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      
+    </nav>
+  
+  
+    <!-- Navbar -->
+    
+   
+    
+ <div class="container mt-5 pt-5 ">
+  <div th:if="${prompt.response}" class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg border-0 rounded-4 bg-dark text-light">
+        <div class="card-body">
+          <h4 class="mb-3 text-info fw-bold">
+            <i class="bi bi-robot"></i> AI Response
+          </h4>
+          <p th:text="${prompt.response}" class="fs-5" style="white-space: pre-line;"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <form th:action="@{/response}" th:object="${prompt}" method="post">
+    <div class="chat-input-container ">
+  <div class="chat-input-box">
+  
+    <span class="tools-icon"></span>
+    <input type="text" th:field="*{prompt}" placeholder="Ask anything" />
+    <button type="submit" class="submit-btn">➤
+</button>
+  </div>
+</div>
+
+ </form>
+
+
+
+
+    <!-- MDB core JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+  </body>
+</html>

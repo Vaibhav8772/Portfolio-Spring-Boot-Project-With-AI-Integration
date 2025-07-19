@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8">
+  <title>About Page</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <!-- slick slider -->
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+
+  <!-- Main Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  
+  <!--Favicon-->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+  
+<header class="navigation fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+   
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navigation">
+      <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+          <a class="nav-link" th:href="@{/ai}">AI</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" th:href="@{/}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/about}">about</a>
+        </li>
+       
+        
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/contact}">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- page title -->
+<section class="page-title-alt bg-primary position-relative">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-white font-tertiary">About Me</h1>
+      </div>
+    </div>
+  </div>
+  <!-- background shapes -->
+ <img th:src="@{/images/illustrations/leaf-bg-top.png}" alt="illustrations" class="bg-shape-1 w-100">
+
+<img th:src="@{/images/illustrations/dots-group-sm.png}" alt="illustrations" class="bg-shape-2">
+
+<img th:src="@{/images/illustrations/leaf-yellow.png}" alt="illustrations" class="bg-shape-3">
+
+<img th:src="@{/images/illustrations/leaf-orange.png}" alt="illustrations" class="bg-shape-4">
+
+<img th:src="@{/images/illustrations/dots-group-cyan.png}" alt="illustrations" class="bg-shape-5">
+
+<img th:src="@{/images/illustrations/leaf-cyan-lg.png}" alt="illustrations" class="bg-shape-6">
+</section>
+<!-- /page title -->
+
+<!-- about -->
+<section class="section pt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <p>A passionate and results-driven Full Stack Java Developer with hands-on experience in building dynamic web applications using Java, Spring Boot, Hibernate, HTML, CSS, JavaScript, and MySQL. Proficient in developing RESTful APIs, integrating frontend and backend components, and implementing responsive UI designs. Known for writing clean, maintainable code and continuously learning new technologies to enhance development efficiency. Seeking an opportunity to contribute to real-world projects in a collaborative environment while delivering high-quality software solutions.</p>
+       <a class="btn btn-primary"
+   th:href="@{/files/Vaibhav%20Mane%20Full%20Stack%20Java%20Dev%20Resume.pdf}"
+   download>
+   Download Resume
+</a>
+       
+        
+        
+      </div>
+      <div class="col-md-4 text-center drag-lg-top">
+        <div class="shadow-down mb-4">
+          <img th:src="@{images/about/IMG_20220625_001959_571.jpg}" alt="author" class="img-fluid w-100 rounded-lg border-thick border-white">
+        </div>
+        <img src="images/about/signature.png" alt="signature" class="img-fluid">
+        <h4>Vaibhav Mane</h4>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /about -->
+
+<!-- Work Process -->
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-around">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-title">Work Process</h2>
+      </div>
+      <div class="col-lg-3 col-md-4 text-center hover-shadow pt-3">
+        <div class="">
+          <img src="images/icons/plan.png" class="mb-4" alt="icon">
+          <h4 class="mb-4">Research and Plan</h4>
+          <p>I begin by understanding your goals, analyzing requirements, and identifying the best technologies and strategies. This phase ensures a clear roadmap for successful execution.</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 text-center hover-shadow pt-3">
+        <img src="images/icons/design.png" class="mb-4" alt="icon">
+        <h4 class="mb-4">Design and Develop</h4>
+        <p>I Creates intuitive designs and builds robust, scalable solutions tailored to your needs. We focus on functionality, user experience, and performance.</p>
+      </div>
+      <div class="col-lg-3 col-md-4 text-center hover-shadow pt-3">
+        <img src="images/icons/print.png" class="mb-4" alt="icon">
+        <h4 class="mb-4">Deliver</h4>
+        <p>I rigorously test the final product and ensure timely delivery with full documentation and support. Your solution goes live — ready to create real impact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ./Work Process -->
+
+
+
+<!-- clients -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">My Clients</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="client-logo-slider d-flex align-items-center">
+          <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="images/clients-logo/client-logo-1.png" alt="client-logo"></a>
+          <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="images/clients-logo/client-logo-2.png" alt="client-logo"></a>
+          <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="images/clients-logo/client-logo-3.png" alt="client-logo"></a>
+          <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="images/clients-logo/client-logo-4.png" alt="client-logo"></a>
+          <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="images/clients-logo/client-logo-5.png" alt="client-logo"></a>
+          <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="images/clients-logo/client-logo-1.png" alt="client-logo"></a>
+          <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="images/clients-logo/client-logo-2.png" alt="client-logo"></a>
+          <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="images/clients-logo/client-logo-3.png" alt="client-logo"></a>
+          <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="images/clients-logo/client-logo-4.png" alt="client-logo"></a>
+          <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="images/clients-logo/client-logo-5.png" alt="client-logo"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /clients -->
+
+
+
+<!-- footer -->
+<footer class="bg-dark footer-section">
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5 class="text-light">Email</h5>
+          <p class="text-white paragraph-lg font-secondary">manev4653@gmail.com</p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-light">Phone</h5>
+          <p class="text-white paragraph-lg font-secondary">+91 7066082228</p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-light">Address</h5>
+          <p class="text-white paragraph-lg font-secondary">Laxmi Nagar Len No.4 Pimple Gurav Pune 411061</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-top text-center border-dark py-5">
+    <p class="mb-0 text-light">Copyright ©<script>
+        var CurrentYear = new Date().getFullYear()
+        document.write(CurrentYear)
+      </script> a theme by <a th:href="'https://www.linkedin.com/in/vaibhav-mane-link/'">Vaibhav Mane</a></p>
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- jQuery -->
+<script src="plugins/jQuery/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
+<!-- slick slider -->
+<script src="plugins/slick/slick.min.js"></script>
+<!-- filter -->
+<script src="plugins/shuffle/shuffle.min.js"></script>
+
+<!-- Main Script -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
